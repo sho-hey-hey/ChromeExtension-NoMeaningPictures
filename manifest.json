@@ -1,0 +1,40 @@
+{
+  "manifest_version": 2,
+  "name": "特に意味はないですけど写真載せます。",
+  "short_name": "無意味画像",
+  "version": "0.0.1",
+  "description": "gmailのメールに'特に意味はないですけど写真載せます。'と画像を添付する。",
+  "icons": {
+    "16": "images/icon/icon_16.png",
+    "48": "images/icon/icon_48.png",
+    "128": "images/icon/icon_128.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "19": "images/icon/icon_19.png",
+      "38": "images/icon/icon_38.png"
+    },
+    "default_title": "no meaning pictures",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/**"],
+      "css": ["css/common.css", "css/content/style.css"],
+      "js": ["js/content/script.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["js/background/script.js"],
+    "persistent": false
+  },
+  "permissions": [
+    "tabs",
+    "https://*/*",
+    "http://*/*",
+    "storage",
+    "webNavigation"
+  ],
+  "options_page": "options.html",
+  "homepage_url": "https://github.com/shoheiono"
+}

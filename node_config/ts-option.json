@@ -1,0 +1,21 @@
+{
+	"noImplicitAny": true,
+	"suppressImplicitAnyIndexErrors": true,
+	"noLib": false,
+	"target": "ES5",
+	"module": "amd",
+	"jsx": "react",
+	"declaration": false,
+	"removeComments": false,
+	"emitDecoratorMetadata": false,
+	"experimentalDecorators": false,
+	"noEmitOnError": true,
+	"noEmitHelpers": true,
+	"preserveConstEnums": true,
+	"isolatedModules": false,
+	"allowJs": false,
+
+	"noExternalResolve": false,
+	"sortOutput": true,
+	"typescript": {}
+}
