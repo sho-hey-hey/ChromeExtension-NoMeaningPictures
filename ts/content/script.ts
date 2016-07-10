@@ -24,8 +24,8 @@ module App {
 		}
 	}
 	function addButtonStopPropagation(e:MouseEvent) {
-		// e.preventDefault();
-		// e.stopPropagation();
+		e.preventDefault();
+		e.stopPropagation();
 
 		// App.autocomplete.dialog.selectItem($(this).index('.qt-item'));
 		// if (e.type === 'mousedown') {
@@ -60,7 +60,7 @@ module App {
 		const addButton:HTMLElement  = doc.createElement('div');
 		addButton.innerText = '追加';
 		addButton.classList.add(ADD_BUTTON_CLASS);
-		addButton.addEventListener('click', addButtonClickEvent, false);
+		addButton.addEventListener('mouseup', addButtonClickEvent, false);
 		addButton.addEventListener('mouseover mousedown', addButtonStopPropagation, false);
 		return addButton;
 	}
