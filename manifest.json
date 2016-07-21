@@ -29,6 +29,8 @@
     "persistent": false
   },
   "permissions": [
+    "clipboardRead",
+    "clipboardWrite",
     "tabs",
     "https://*/*",
     "http://*/*",

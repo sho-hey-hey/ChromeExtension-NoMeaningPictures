@@ -1,4 +1,6 @@
 module App {
+	declare var chrome:any;
+
 	const ADD_BUTTON_CLASS = 'add-button';
 	const ADD_BUTTON_CLASS_SHOW = 'add-button--show';
 	let doc:Document = document;
@@ -35,7 +37,22 @@ module App {
 	} 
 	// 追加ボタンクリック
 	function addButtonClickEvent(e:MouseEvent):void {
-		alert('click');
+		copyImage();
+		// クリップボード貼り付け
+		doc.execCommand('paste');
+	}
+
+	function copyImage():void {
+		const TEXT_AREA_ID = 'tempTextArea';
+		const textArea = doc.getElementById(TEXT_AREA_ID) || doc.createElement('textarea');
+		textArea.id = TEXT_AREA_ID;
+		textArea.style.cssText = 'position:absolute;left:-100%;opacity:0;';
+
+		doc.body.appendChild(textArea);
+
+		textArea.value = 'ほえほえーーー';
+		textArea.select();
+		doc.execCommand("copy");
 	}
 	// focusinイベント
 	function focusInEvent(e:MouseEvent):void {
