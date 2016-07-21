@@ -44,7 +44,7 @@ module App {
 
 	function copyImage():void {
 		const TEXT_AREA_ID = 'tempTextArea';
-		const textArea = doc.getElementById(TEXT_AREA_ID) || doc.createElement('textarea');
+		const textArea = doc.createElement('textarea');
 		textArea.id = TEXT_AREA_ID;
 		textArea.style.cssText = 'position:absolute;left:-100%;opacity:0;';
 
